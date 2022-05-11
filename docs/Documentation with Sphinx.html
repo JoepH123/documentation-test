@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation with Sphinx &mdash; Avocado Analytics 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Documentation Standards" href="Documentation%20Standards.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Avocado Analytics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Summary.html">Summary of documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Code%20description.html">Code description</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="How%20to%20Document.html">How to Document?</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Documentation%20Standards.html">Documentation Standards</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Documentation with Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#project-with-sphinx-documentation-from-scratch">Project with Sphinx documentation (from scratch)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Avocado Analytics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="How%20to%20Document.html">How to Document?</a> &raquo;</li>
+      <li>Documentation with Sphinx</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Documentation with Sphinx.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>Documentation with Sphinx<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<section id="project-with-sphinx-documentation-from-scratch">
+<h2>Project with Sphinx documentation (from scratch)<a class="headerlink" href="#project-with-sphinx-documentation-from-scratch" title="Permalink to this headline"></a></h2>
+<p>Explaining how to create a by Sphinx documented project helps to understand how Sphinx works, and can be useful if any new repository needs to be created.</p>
+<ul>
+<li><p>Make a project with a virtual environment (and make sure that you are navigated into this project within the command prompt).</p></li>
+<li><p>Activate the virtual environment</p></li>
+<li><p>In command prompt perform</p>
+<blockquote>
+<div><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">pip install sphinx</span>
+<span class="x">pip install numpydoc</span>
+<span class="x">pip install sphinx-rtd-theme</span>
+<span class="x">mkdir docs (in the project directory)</span>
+<span class="x">mkdir sphinx (in the project)</span>
+<span class="x">cd sphinx (navigate to sphinx folder)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>During the quickstart, say <code class="docutils literal notranslate"><span class="pre">[y]</span></code>, when asked to have separate build and source folders</p>
+<blockquote>
+<div><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">sphinx-quickstart</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Make some changes in the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add extensions</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span> <span class="s1">&#39;numpydoc&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Uncomment</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Add the following code</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ##### -&gt; Code for the following structure of code folder:</span>
+<span class="c1"># folder with app.py and then all the folders other code files in this folder</span>
+<span class="c1"># or in sub-folders underneath the src folder</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;../../src/&#39;</span>
+<span class="c1"># How to get from the conf.py file to the code</span>
+
+<span class="c1"># Add the app.py to the sys.path which the conf.py file needs to make automatic documentation</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../src/&#39;</span><span class="p">))</span>
+
+<span class="c1"># Add all sub-folders in the src folder which contain the python files</span>
+<span class="c1"># This way all the python files can be accessed.</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">subdirectories</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">subdirectory</span> <span class="ow">in</span> <span class="n">subdirectories</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">subdirectory</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="c1"># print(os.path.join(root, file))</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>Change the theme</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">the</span> <span class="pre">following</span> <span class="pre">code</span></code> makes sure that the conf.py file can actually find all the python files that it needs to supply to autodoc.
+Autodoc basically receives some python files and extracts all the docstrings to form a good-looking documentation page for these python files.
+It needs to be able to know where these files are located. Otherwise it cannot create the documentation for it. It now uses <code class="docutils literal notranslate"><span class="pre">src</span></code>
+as the folder that contains all the code. All files and in this <code class="docutils literal notranslate"><span class="pre">src</span></code> folder and the sub-folders of <code class="docutils literal notranslate"><span class="pre">src</span></code> should be python files. Only these files
+python files will be included in the documentation. Unless other files are inserted or the code is changed, to include even more files.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All python files not included in the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder will not be included in the documentation.</p>
+</div>
+<ul>
+<li><p>In order to now generate the documentation of the project, a few commands need to be executed within the command prompt.</p></li>
+<li><p>Make sure that all the files that need documentation are added to the <code class="docutils literal notranslate"><span class="pre">sphinx/source</span></code> directory with the use of the following commands:</p>
+<blockquote>
+<div><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">sphinx-apidoc -o sphinx\source src</span>
+<span class="x">sphinx-apidoc -o sphinx\source src\utils_folder</span>
+<span class="x">same for all folders in ``src`` folder</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-o</span> <span class="pre">sphinx\source</span> <span class="pre">src</span></code> only make sure that all the loose python files in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory are converted
+to <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files and saved into the <code class="docutils literal notranslate"><span class="pre">sphinx\source</span></code> directory. For the python files in sub-folder in the <cite>src</cite> directory,
+the same command needs to be ran for each of the folder within the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder.</p>
+</div>
+<ul>
+<li><p>Navigate to the sphinx folder and call:</p>
+<blockquote>
+<div><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">make html</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>If anything goes wrong, or you need to reload the html files. You can clean (empty) the <code class="docutils literal notranslate"><span class="pre">sphinx\build</span></code> folder and regenerate the html files, by calling:</p>
+<blockquote>
+<div><div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">make clean</span>
+<span class="x">make html</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">sphinx/source</span></code> folder, you can create new files, and pages for the documentation which are not automatically generated. Using, this property, you can create additional more specific and detailed documentation pages. For example to explain how to use create documentation for the KGA project.</p></li>
+<li><p>In the index page, you can create the landing page for the documentation.</p></li>
+<li><p>A final important topic is the <code class="docutils literal notranslate"><span class="pre">toctrees</span></code>. These are properties of the <code class="docutils literal notranslate"><span class="pre">.rst</span></code> files, which help to link everything together into a final documentation webpage. The use of these toctrees will be discussed later in this documentation.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Documentation%20Standards.html" class="btn btn-neutral float-left" title="Documentation Standards" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, JH.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
